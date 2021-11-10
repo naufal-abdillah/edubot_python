@@ -16,7 +16,8 @@ def pred_to_string(prediction_groups):
     results.append(' '.join(temp))
   return results
 
-def iterate_imagepath(directory):
+
+def iterate_image_path(directory):
   images = []
   labels = []
   #iterate through dataset
@@ -33,17 +34,67 @@ def iterate_imagepath(directory):
         else:
             continue
   return images, labels
+def iterate_image_dir(directory):
+  directory = '/content/drive/MyDrive/Work/Widya Edutech/dataset/MTK S+J Komposisi Invers'
+  images = []
+  labels = []
+  basename = os.path.basename(directory)
+  for filename in os.listdir(directory):
+      if filename.endswith(".png") or filename.endswith(".jpg"):
+        file_path = os.path.join(directory, filename)
+        images.append(file_path)
+        labels.append(basename)
+        continue
+      else:
+          continue
+  return images, labels
 
-def read_image_data_wlabel(datadir, dest, filename):
+def iterate_image_dir(directory):
+  directory = '/content/drive/MyDrive/Work/Widya Edutech/dataset/MTK S+J Komposisi Invers'
+  images = []
+  labels = []
+  basename = os.path.basename(directory)
+  for filename in os.listdir(directory):
+      if filename.endswith(".png") or filename.endswith(".jpg"):
+        file_path = os.path.join(directory, filename)
+        images.append(file_path)
+        labels.append(basename)
+        continue
+      else:
+          continue
+  return images, labels
+
+def read_image_data(datadir, dest, filename):
     pipeline = keras_ocr.pipeline.Pipeline()
-    images, labels = iterate_imagepath(datadir)
+    images, labels = iterate_image_path(datadir)
     prediction_groups = pipeline.recognize(images)
     pred_strings = pred_to_string(prediction_groups)
     #saving prediction strings
-    save_list(pred_strings, dest, filename)
+    save_list(pred_strings, dest, filename+".txt")
     #saving class labels
-    save_list(labels, dest, filename+"_classes")
+    save_list(labels, dest, filename+"_classes"+".txt")
 
+def read_imagepath(imagepath, dest, filename, save_output=False):
+    pipeline = keras_ocr.pipeline.Pipeline()
+    images = [imagepath]
+    prediction_groups = pipeline.recognize(images)
+    pred_strings = pred_to_string(prediction_groups)
+    if(save_output == True):
+        #saving prediction strings
+        save_list(pred_strings, dest, filename+".txt")
+        #saving class labels
+        save_list(labels, dest, filename+"_classes"+".txt")
+    return pred_strings,labels
+
+def read_image_dir(datadir, dest, filename):
+    pipeline = keras_ocr.pipeline.Pipeline()
+    images, labels = iterate_image_dir(datadir)
+    prediction_groups = pipeline.recognize(images)
+    pred_strings = pred_to_string(prediction_groups)
+    #saving prediction strings
+    save_list(pred_strings, dest, filename+".txt")
+    #saving class labels
+    save_list(labels, dest, filename+"_classes"+".txt")
 
 # cwd = os.getcwd()
 #
