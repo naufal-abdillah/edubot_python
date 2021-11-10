@@ -8,8 +8,8 @@ IMG_SHAPE  = 1000 # Our training data consists of images with width of 150 pixel
 
 os.chdir("..")
 cwd = os.getcwd()
-imagedir = os.path.join(cwd,"raw_dataset")
-dest = os.path.join(cwd,"dataset")
+imagedir = os.path.join(cwd,"data_raw")
+dest = os.path.join(cwd,"data_augmented")
 
 datagen = ImageDataGenerator(
       rescale=1./255,
