@@ -12,7 +12,7 @@ with open(os.path.join(cwd,"val_data.txt"), "rb") as fp:
   val_data = pickle.load(fp)
 with open(os.path.join(cwd,"val_label.txt"), "rb") as fp:
   val_label = pickle.load(fp)
-  
+
 vocab = 1000
 max_len = 48
 def remove_digit(sentences):
