@@ -42,7 +42,7 @@ python classify_images.py
 * classify_images loads the text classifier model located in the same folder, then classify the scanned strings
 *  classify_images converts prediction ouput into the chapter names and print them
 
-# Inputs and Outputs
+# Inputs
 The input files are image files located in predict/predicted_images
 
 ![predicted_images](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/examples/1.jpg)
@@ -51,10 +51,14 @@ here are the math question screenshot we use as predicted images
 
 ![peluang](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/predict/predicted_images/to_predict_2.png) ![komposisi](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/predict/predicted_images/to_predict_1.png)
 
+# Output
 The classify_images prints the chapters in the form of a list
+
 ![output list](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/examples/2.jpg)
 
+# Text Classifier Model
 The model trained gives the accuracy >0.9 with the dataset we use. The dataset is located in the dataset folder
+
 ![acc](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/examples/3.png
 ![loss](https://github.com/naufal-abdillah/edubot_python/blob/master/examples/4.png?raw=true)
 
