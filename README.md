@@ -47,9 +47,9 @@ The input files are image files located in predict/predicted_images
 
 ![predicted_images](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/examples/1.jpg)
 
-here are the math question screenshot we use as predicted images
+here are the math question screenshots we use as predicted images
 
-![peluang](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/predict/predicted_images/to_predict_2.png) ![komposisi](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/predict/predicted_images/to_predict_1.png)
+![komposisi](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/predict/predicted_images/to_predict_1.png) ![peluang](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/predict/predicted_images/to_predict_2.png) 
 
 # Output
 The classify_images prints the chapters in the form of a list
