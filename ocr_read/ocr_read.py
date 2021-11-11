@@ -1,3 +1,4 @@
+
 import keras_ocr
 import os
 import pickle
@@ -35,7 +36,7 @@ def iterate_image_path(directory):
             continue
   return images, labels
 def iterate_image_dir(directory):
-  directory = '/content/drive/MyDrive/Work/Widya Edutech/dataset/MTK S+J Komposisi Invers'
+  # directory = '/content/drive/MyDrive/Work/Widya Edutech/dataset/MTK S+J Komposisi Invers'
   images = []
   labels = []
   basename = os.path.basename(directory)
@@ -50,7 +51,7 @@ def iterate_image_dir(directory):
   return images, labels
 
 def iterate_image_dir(directory):
-  directory = '/content/drive/MyDrive/Work/Widya Edutech/dataset/MTK S+J Komposisi Invers'
+  # directory = '/content/drive/MyDrive/Work/Widya Edutech/dataset/MTK S+J Komposisi Invers'
   images = []
   labels = []
   basename = os.path.basename(directory)
@@ -74,9 +75,9 @@ def read_image_data(datadir, dest, filename):
     #saving class labels
     save_list(labels, dest, filename+"_classes"+".txt")
 
-def read_imagepath(imagepath, dest, filename, save_output=False):
+def read_image_path(image_path, dest="..", filename="image_text", save_output=False):
     pipeline = keras_ocr.pipeline.Pipeline()
-    images = [imagepath]
+    images = [image_path]
     prediction_groups = pipeline.recognize(images)
     pred_strings = pred_to_string(prediction_groups)
     if(save_output == True):
@@ -84,18 +85,26 @@ def read_imagepath(imagepath, dest, filename, save_output=False):
         save_list(pred_strings, dest, filename+".txt")
         #saving class labels
         save_list(labels, dest, filename+"_classes"+".txt")
-    return pred_strings,labels
+    return pred_strings
 
-def read_image_dir(datadir, dest, filename):
+def read_image_dir(datadir, save = False, dest=os.getcwd(), filename=os.path.basename(os.getcwd())):
     pipeline = keras_ocr.pipeline.Pipeline()
     images, labels = iterate_image_dir(datadir)
     prediction_groups = pipeline.recognize(images)
     pred_strings = pred_to_string(prediction_groups)
     #saving prediction strings
-    save_list(pred_strings, dest, filename+".txt")
-    #saving class labels
-    save_list(labels, dest, filename+"_classes"+".txt")
+    if(save == True):
+        save_list(pred_strings, dest, filename+".txt")
+        #saving class labels
+        save_list(labels, dest, filename+"_classes"+".txt")
+    return pred_strings
 
+def read_images_from_dir(datadir):
+    pipeline = keras_ocr.pipeline.Pipeline()
+    images, labels = iterate_image_dir(datadir)
+    prediction_groups = pipeline.recognize(images)
+    pred_strings = pred_to_string(prediction_groups)
+    return pred_strings
 # cwd = os.getcwd()
 #
 # images = []
