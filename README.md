@@ -44,5 +44,18 @@ python classify_images.py
 
 # Inputs and Outputs
 The input files are image files located in predict/predicted_images
+
+![predicted_images](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/examples/1.jpg)
+
+here are the math question screenshot we use as predicted images
+
+![peluang](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/predict/predicted_images/to_predict_2.png) ![komposisi](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/predict/predicted_images/to_predict_1.png)
+
 The classify_images prints the chapters in the form of a list
+![output list](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/examples/2.jpg)
+
 The model trained gives the accuracy >0.9 with the dataset we use. The dataset is located in the dataset folder
+![acc](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/examples/3.png
+![loss](https://github.com/naufal-abdillah/edubot_python/blob/master/examples/4.png?raw=true)
+
+You can see the training process of the text classifier in this [google colab notebook](https://colab.research.google.com/drive/1xQugWAoWPtqbY19pCTFd8I725TQAmJB_?usp=sharing)
