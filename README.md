@@ -34,8 +34,8 @@ python classify_images.py
 
 ```
 # How it works
-* The classify_images.py will the program will call ocr_read.py located in ocr_read folder 
-* ocr_read.py will iterate through predict/predicted_images and list the image files 
+* The classify_images.py calls ocr_read.py located in ocr_read folder 
+* ocr_read.py iterates through predict/predicted_images and list the image files 
 * the listed image files then scanned with keras_ocr giving prediction groups output
 * the prediction groups then converted into strings and then given back to classify_images.py
 * the string then converted into the required format for the text classifier
