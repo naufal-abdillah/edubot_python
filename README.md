@@ -59,7 +59,7 @@ The classify_images prints the chapters in the form of a list
 # Text Classifier Model
 The model trained gives the accuracy >0.9 with the dataset we use. The dataset is located in the dataset folder
 
-![acc](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/examples/3.png
+![acc](https://raw.githubusercontent.com/naufal-abdillah/edubot_python/master/examples/3.png)
 ![loss](https://github.com/naufal-abdillah/edubot_python/blob/master/examples/4.png?raw=true)
 
 You can see the training process of the text classifier in this [google colab notebook](https://colab.research.google.com/drive/1xQugWAoWPtqbY19pCTFd8I725TQAmJB_?usp=sharing)
